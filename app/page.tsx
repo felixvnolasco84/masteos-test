@@ -13,6 +13,15 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { clashDisplayMedium } from "@/utils/fonts";
 import Link from "next/link";
 import WhatsAppButton from "@/components/WhatsApp/WhatsAppButton";
+import HeroCTASection from "@/components/Sections/HeroCTASection";
+import InvestFutureSection from "@/components/Sections/InvestFutureSection";
+import AchievementsSection from "@/components/Sections/AchievementsSection";
+import FeatureSection from "@/components/Sections/FeatureSection";
+import ProjectsSection from "@/components/Sections/ProjectsSection";
+import PlacesSection from "@/components/Sections/PlacesSection";
+import ReviewsSection from "@/components/Sections/ReviewsSection";
+import BlogSection from "@/components/Sections/BlogSection";
+import AboutUsSection from "@/components/Sections/AboutUsSection";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -28,11 +37,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="relative flex flex-col gap-10 py-4 lg:gap-20">
-      <div className="lg:container">
-        <HeroSectionCarrousel />
-      </div>
-      <div className="container flex flex-col gap-10 lg:gap-20">
+    <main className="container flex flex-col items-center justify-center gap-10 py-4 lg:gap-20 lg:py-24 xl:gap-48">
+      <HeroCTASection />
+      <InvestFutureSection />
+      <AchievementsSection />
+      <FeatureSection />
+      <ProjectsSection />
+      <PlacesSection />
+      <ReviewsSection />
+      <BlogSection />
+      <AboutUsSection />
+      {/*       
         <FeaturedClients />
         <CTASection />
         <FeaturedServices />
@@ -58,8 +73,7 @@ export default function Home() {
           </div>
         </section>
 
-        <WhatsAppComponent />
-      </div>
+        <WhatsAppComponent /> */}
     </main>
   );
 }

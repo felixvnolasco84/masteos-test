@@ -1,10 +1,12 @@
 import Image, { StaticImageData } from "next/image";
-import First from "@/public/images/HeroNew.webp";
-import Second from "@/public/images/HeroNew.webp";
-import Third from "@/public/images/HeroNew.webp";
+import First from "@/public/images/hero.webp";
+import Second from "@/public/images/hero.webp";
+import Third from "@/public/images/hero.webp";
 import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Card, CardContent, CardHeader } from "../ui/card";
+import CustomSection from "../CustomSection";
+import SectionParagraph from "../SectionParagraph";
 
 type Project = {
   title: string;
@@ -70,18 +72,16 @@ const items: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section className="space-y-12">
+    <CustomSection>
       <div className="space-y-4">
         <SectionTitle title="Los proyectos Masteos" />
-        <p className="text-center">
-          Nuestros clientes crean un patrimonio seguro y rentable.
-        </p>
+        <SectionParagraph text="Nuestros clientes crean un patrimonio seguro y rentable." />
       </div>
       <div className="grid justify-center gap-12 lg:grid-cols-3">
         {items.map((item, index) => (
           <CardItem key={index} {...item} />
         ))}
       </div>
-    </section>
+    </CustomSection>
   );
 }

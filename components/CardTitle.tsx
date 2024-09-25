@@ -1,7 +1,11 @@
-export default function CardTitle({ title }: { title: string }) {
-  return (
-    <h2 className="text-2xl font-bold leading-relaxed tracking-wide xl:text-4xl">
-      {title}
-    </h2>
-  );
+import { cn } from "@/lib/utils";
+
+export default function CardTitle({
+  title,
+  className,
+}: {
+  title: string;
+  className?: string;
+}) {
+  return <h2 className={cn("font-bold text-2xl xl:text-3xl", className)}>{title}</h2>;
 }

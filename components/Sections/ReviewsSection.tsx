@@ -9,6 +9,7 @@ import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { StarIcon } from "lucide-react";
+import CustomSection from "../CustomSection";
 
 type Review = {
   name: string;
@@ -20,11 +21,16 @@ type Review = {
 function CardItem({ name, review, date, stars }: Review) {
   return (
     <Card className="group flex flex-col overflow-hidden">
-      <CardHeader>        
-        <h3 className="text-lg font-bold leading-relaxed tracking-wide">{name}</h3>
+      <CardHeader>
+        <h3 className="text-lg font-bold leading-relaxed tracking-wide">
+          {name}
+        </h3>
         <div className="flex space-x-1">
           {Array.from({ length: stars }).map((_, index) => (
-            <StarIcon className="h-4 w-4 fill-yellow-400 text-yellow-400" key={index} />
+            <StarIcon
+              className="h-4 w-4 fill-yellow-400 text-yellow-400"
+              key={index}
+            />
           ))}
         </div>
       </CardHeader>
@@ -80,7 +86,7 @@ const items: Review[] = [
 
 export default function ReviewsSection() {
   return (
-    <section className="space-y-12">
+    <CustomSection>
       <SectionTitle title="Nuestros clientes hablan de nosotros" />
       <Carousel
         opts={{
@@ -103,6 +109,6 @@ export default function ReviewsSection() {
           <CardItem key={index} {...item} />
         ))}
       </div> */}
-    </section>
+    </CustomSection>
   );
 }

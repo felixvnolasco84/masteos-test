@@ -3,31 +3,37 @@ import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import First from "@/public/images/Hero/GaleriaHero.webp";
-import Second from "@/public/images/Hero/GaleriaHero.webp";
-import Third from "@/public/images/Hero/GaleriaHero.webp";
+import First from "@/public/images/blogImage.webp";
+import Second from "@/public/images/blogImage.webp";
+import Third from "@/public/images/blogImage.webp";
 import Link from "next/link";
+import SectionParagraph from "../SectionParagraph";
 
 type Post = {
   image: StaticImageData;
   title: string;
-  description: string;
   path: string;
 };
 
-function FeatureCardItem({ title, description, image, path }: Post) {
+function FeatureCardItem({ title, image, path }: Post) {
   return (
     <Link href={path}>
-      <Card className="-y-4 group overflow-hidden">
-        <Image src={image} alt={title} />
-        <CardHeader>
+      <Card className="-y-4 group">
+        <Image
+          className="w-full object-cover object-center"
+          src={image}
+          alt={title}
+        />
+        <CardHeader className="px-0">
           <CardTitle title={title} />
         </CardHeader>
-        <CardContent>
-          <p className="prose prose-grey-700 prose-p:mb-8 prose-p:mt-0">
-            {description}
-          </p>
-        </CardContent>
+        <CardFooter className="p-0">
+          <Link href={path}>
+            <Button className="rounded-full" variant={"outline"} size={"lg"}>
+              Leer más
+            </Button>
+          </Link>
+        </CardFooter>
       </Card>
     </Link>
   );
@@ -36,39 +42,32 @@ function FeatureCardItem({ title, description, image, path }: Post) {
 const items: Post[] = [
   {
     image: First,
-    title: "Te ayudamos a encontrar la aguja en el pajar",
-    description:
-      "Ahorra tiempo y dinero invirtiendo donde quieras desde donde quieras, sin moverte de tu ciudad.",
+    title: "¿Cómo se calcula la rentabilidad de una vivienda de alquiler?",
+
     path: "/",
   },
   {
     image: Second,
-    title: "Nos ocupamos de la reforma y la decoración",
-    description:
-      "Nuestros expertos le sacan el máximo partido a tu inversión sin que tu pongas un solo pie en la obra.",
+    title: "¿Cómo se calcula la rentabilidad de una vivienda de alquiler?",
+
     path: "/",
   },
   {
     image: Third,
-    title: "Nos encargamos de la gestión del alquiler y los inquilinos",
-    description:
-      "No tendrás que preocuparte de buscar inquilino, solo de recibir el pago del alquiler.",
+    title: "¿Cómo se calcula la rentabilidad de una vivienda de alquiler?",
+
     path: "/",
   },
 ];
 
 export default function BlogSection() {
   return (
-    <div className="flex max-w-6xl flex-col items-center justify-center gap-4">
+    <div className="flex max-w-6xl flex-col items-center justify-center gap-12">
       <div className="space-y-4">
         <SectionTitle title="Aprende con Masteos" />
-        <p>
-          No hace falta ser un experto en Real Estate para invertir en vivienda
-          en alquiler. Tenemos toda la información que necesitas para
-          conseguirlo.
-        </p>
+        <SectionParagraph text="No hace falta ser un experto en Real Estate para invertir en vivienda en alquiler. Tenemos toda la información que necesitas para conseguirlo." />
       </div>
-      <div className="grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 items-center justify-center gap-8 lg:grid-cols-3">
         {items.map((item, index) => (
           <FeatureCardItem key={index} {...item} />
         ))}

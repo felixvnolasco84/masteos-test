@@ -3,6 +3,8 @@ import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Button } from "../ui/button";
 import { Card, CardDescription, CardHeader } from "../ui/card";
+import CustomSection from "../CustomSection";
+import SectionParagraph from "../SectionParagraph";
 
 type CardItemProps = {
   title: string;
@@ -11,8 +13,8 @@ type CardItemProps = {
 
 function FeatureCardItem({ title, description }: CardItemProps) {
   return (
-    <Card className="border-none">
-      <CardHeader>
+    <Card className="border-none shadow-none">
+      <CardHeader className="grid justify-items-center">
         <CardTitle title={title} />
         <CardDescription>{description}</CardDescription>
       </CardHeader>
@@ -41,15 +43,13 @@ const items: CardItemProps[] = [
 
 export default function AchievementsSection() {
   return (
-    <div className="grid max-w-3xl items-center justify-center justify-items-center gap-4 lg:gap-12">
+    <CustomSection>
       <div className="space-y-4">
         <SectionTitle
           title="Nos ocupamos de todo
 "
         />
-        <p className="text-center">
-          Búsqueda, transacción, reforma, decoración y alquiler.
-        </p>
+        <SectionParagraph text="Búsqueda, transacción, reforma, decoración y alquiler." />
       </div>
       <div className="grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-2">
         {items.map((item, index) => (
@@ -59,6 +59,6 @@ export default function AchievementsSection() {
       <Button variant={"default"} size={"lg"}>
         Empezar a invertir
       </Button>
-    </div>
+    </CustomSection>
   );
 }

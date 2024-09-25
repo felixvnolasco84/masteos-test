@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/next-script-for-ga */
+import { Sen } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { WithContext, Organization } from "schema-dts";
 import Script from "next/script";
 import "./globals.css";
-import { clashDisplayRegular } from "@/utils/fonts";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { ConvexClientProvider } from "@/providers/convex-provider";
@@ -41,6 +41,11 @@ const jsonLd: WithContext<Organization> = {
   },
 };
 
+const senFont = Sen({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,7 +56,7 @@ export default function RootLayout({
       <head>
         <meta name="robots" content="index, follow" />
       </head>
-      <body className={`${clashDisplayRegular.className}`}>
+      <body className={`${senFont.className}`}>
         <ConvexClientProvider>
           <Header />
           <div id="root" className="flex flex-1 flex-col gap-3">

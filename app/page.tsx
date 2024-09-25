@@ -1,19 +1,5 @@
-import CTADeposit from "@/components/Sections/CTASections/CTADeposit";
 import { Metadata } from "next";
-import CTASection from "@/components/Sections/CTASections/CTASection";
-import FeaturedClients from "@/components/Sections/FeaturedClients";
-import FeaturedServices from "@/components/Sections/FeaturedServices";
-import HeroSectionCarrousel from "@/components/Sections/HeroSectionCarrousel";
-import RentSection from "@/components/Sections/RentSection";
-import SingleFeature from "@/components/Sections/SingleFeature";
-import CallButton from "@/components/WhatsApp/CallButton";
-
-import WhatsAppComponent from "@/components/WhatsApp/WhatsAppComponent";
-import { ContactForm } from "@/components/forms/ContactForm";
-import { clashDisplayMedium } from "@/utils/fonts";
-import Link from "next/link";
-import WhatsAppButton from "@/components/WhatsApp/WhatsAppButton";
-import HeroCTASection from "@/components/Sections/HeroCTASection";
+import AboutUsHeroSection from "@/components/Sections/AboutUsHeroSection";
 import InvestFutureSection from "@/components/Sections/InvestFutureSection";
 import AchievementsSection from "@/components/Sections/AchievementsSection";
 import FeatureSection from "@/components/Sections/FeatureSection";
@@ -22,6 +8,8 @@ import PlacesSection from "@/components/Sections/PlacesSection";
 import ReviewsSection from "@/components/Sections/ReviewsSection";
 import BlogSection from "@/components/Sections/BlogSection";
 import AboutUsSection from "@/components/Sections/AboutUsSection";
+import ClientsSection from "@/components/Sections/ClientsSection";
+import HeroCTASection from "@/components/Sections/HeroCTASection";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -37,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="container flex flex-col items-center justify-center gap-10 py-4 lg:gap-20 lg:py-24 xl:gap-48">
+    <main className="flex flex-col items-center justify-center gap-10 lg:gap-20 xl:gap-48">
       <HeroCTASection />
       <InvestFutureSection />
       <AchievementsSection />
@@ -47,6 +35,7 @@ export default function Home() {
       <ReviewsSection />
       <BlogSection />
       <AboutUsSection />
+      <ClientsSection />
       {/*       
         <FeaturedClients />
         <CTASection />
@@ -57,6 +46,7 @@ export default function Home() {
         <ContactForm />
         <section className="order-8 mx-auto flex flex-col text-center">
           <h3
+
             className={`my-1 text-xl lg:my-2 lg:text-3xl ${clashDisplayMedium.className}`}
           >
             LLámanos

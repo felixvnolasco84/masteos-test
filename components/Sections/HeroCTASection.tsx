@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { InfiniteMovingMessages } from "../InfiniteMovingCarrousel/InfiniteMovingCarrousel";
 import { Button } from "../ui/button";
+import Hero from "@/public/images/hero.webp";
 import SectionTitle from "../SectionTitle";
 
 export default function HeroCTASection() {
@@ -21,6 +22,7 @@ export default function HeroCTASection() {
           Contactar con un asesor
         </Button>
       </div>
+      <Image src={Hero} alt="Invierte en vivienda en alquiler" />
     </section>
   );
 }

@@ -5,7 +5,7 @@ import HeaderMobile from "./HeaderMobile";
 
 export default function Header() {
   return (
-    <header className="container sticky top-0 z-50 flex items-center justify-between border-b-2 border-[#707070] bg-white px-4 pb-3 pt-6 text-lg lg:pb-5 lg:pt-5 xl:pb-6 xl:pt-12">
+    <header className="sticky top-0 z-50 flex w-full items-center justify-center border-b-2 border-[#707070] bg-white px-4 pb-3 pt-6 text-lg lg:pb-5 lg:pt-5 xl:pb-6 xl:pt-12">
       <nav className="w-full">
         <div className="flex items-center justify-between">
           <Link href={"/"}>

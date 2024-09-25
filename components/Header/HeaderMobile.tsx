@@ -9,7 +9,6 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import Link from "next/link";
-import { rentPlaces } from "@/utils/data";
 import { Button } from "../ui/button";
 
 export default function HeaderMobile() {
@@ -40,27 +39,7 @@ export default function HeaderMobile() {
       </SheetTrigger>
       <SheetContent side={"left"}>
         <SheetHeader>
-          <SheetDescription className="flex h-3/4 flex-col justify-around text-2xl text-black">
-            {rentPlaces.map((place) => (
-              <SheetTrigger key={place.name}>
-                <Link className="h-fit" href={`/${place.slug}`}>
-                  <SheetClose className="text-white">
-                    <div>
-                      <p className="font-light text-gray-400">
-                        {place.description}
-                      </p>
-                      <p className="text-xs">
-                        {" "}
-                        {place.name.toUpperCase()}
-                        {", "}
-                        {place.district.toUpperCase()}
-                      </p>
-                    </div>
-                  </SheetClose>
-                </Link>
-              </SheetTrigger>
-            ))}
-          </SheetDescription>
+          <SheetDescription className="flex h-3/4 flex-col justify-around text-2xl text-black"></SheetDescription>
         </SheetHeader>
       </SheetContent>
     </Sheet>

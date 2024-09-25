@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image";
-import First from "@/public/images/HeroNew.webp";
-import Second from "@/public/images/HeroNew.webp";
-import Third from "@/public/images/HeroNew.webp";
+import First from "@/public/images/1689236838-image.webp";
+import Second from "@/public/images/1689236838-image.webp";
+import Third from "@/public/images/1689236838-image.webp";
 import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "../ui/card";
+import CustomSection from "../CustomSection";
 
 type CardItemProps = {
   title: string;
@@ -27,47 +28,46 @@ function CardItem({
         <Image src={image} alt={title} />
       </div>
       <CardHeader>
-        <CardTitle title={title} />
+        <CardTitle className="text-4xl" title={title} />
+        <CardDescription>{description}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p className="prose prose-grey-700 prose-p:mb-8 prose-p:mt-0">
-          {description}
-        </p>
-      </CardContent>
+      {/* <CardContent>
+        <p className="prose prose-grey-700 prose-p:mb-8 prose-p:mt-0"></p>
+      </CardContent> */}
     </Card>
   );
 }
 
 const items: CardItemProps[] = [
   {
-    title: "Rentabilidad",
+    title: "Prepara tu jubilación",
     description:
-      "Rentabiliza tus ahorros y construye un patrimonio para el futuro invirtiendo en vivienda de alquiler de forma fácil y segura.",
+      "No sabemos con que edad te vas a jubilar, pero sí que podemos ayudarte a prepararla.",
     image: First,
   },
   {
-    title: "Seguridad",
+    title: "Crea tu patrimonio familiar",
     description:
-      "Invierte en vivienda de alquiler con la garantía de un equipo de expertos que te asesorarán en todo momento.",
+      "Dejar a tus hijos un patrimonio tangible es la mejor manera de asegurarles un futuro seguro y rentable.",
     image: Second,
   },
   {
-    title: "Facilidad",
+    title: "Rentabiliza tus ahorros",
     description:
-      "Descubre las oportunidades de inversión que tenemos para ti y contacta con un asesor para resolver tus dudas.",
+      "Tus ahorros no están generando ningún beneficio en el banco. Invertidos en vivienda en alquiler, sí.",
     image: Third,
   },
 ];
 
 export default function InvestFutureSection() {
   return (
-    <section className="space-y-12 py-4 lg:py-24">
+    <CustomSection>
       <SectionTitle title="Invierte en tu futuro" />
       <div className="grid justify-center gap-12 lg:grid-cols-3">
         {items.map((item, index) => (
           <CardItem key={index} {...item} />
         ))}
       </div>
-    </section>
+    </CustomSection>
   );
 }

@@ -1,12 +1,14 @@
 import Image, { StaticImageData } from "next/image";
-import First from "@/public/images/HeroNew.webp";
-import Second from "@/public/images/HeroNew.webp";
-import Third from "@/public/images/HeroNew.webp";
+import First from "@/public/images/placeImage.webp";
+import Second from "@/public/images/placeImage.webp";
+import Third from "@/public/images/placeImage.webp";
 import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import CustomSection from "../CustomSection";
+import SectionParagraph from "../SectionParagraph";
 
 type Place = {
   title: string;
@@ -17,7 +19,7 @@ type Place = {
 function CardItem({ title, image, path }: Place) {
   return (
     <Link href={path}>
-      <Card className="group relative flex aspect-[12/16] flex-col items-end justify-end overflow-hidden">
+      <Card className="group relative flex aspect-[12/16] flex-col items-end justify-end overflow-hidden rounded-3xl">
         <div className="absolute z-10 h-full w-full transition group-hover:scale-105">
           <Image
             className="h-full w-full object-cover object-center"
@@ -70,14 +72,10 @@ const items: Place[] = [
 
 export default function PlacesSection() {
   return (
-    <section className="grid w-full justify-items-center space-y-12 lg:py-24">
+    <CustomSection>
       <div className="space-y-4">
         <SectionTitle title="Expertos locales" />
-        <p>
-          Masteos está presente en más de 10 ciudades y municipios de España, y
-          en toda Francia. ¡Seguro que con nosotros encuentras una oportunidad
-          única!
-        </p>
+        <SectionParagraph text="Masteos está presente en más de 10 ciudades y municipios de España, y en toda Francia. ¡Seguro que con nosotros encuentras una oportunidad única!" />
       </div>
       <div className="grid w-full justify-center gap-4 lg:grid-cols-3">
         {items.map((item, index) => (
@@ -85,8 +83,8 @@ export default function PlacesSection() {
         ))}
       </div>
       <Button variant={"default"} size={"lg"}>
-        Descubre más
+        Descubrir todas nuestras ciudades
       </Button>
-    </section>
+    </CustomSection>
   );
 }

@@ -3,9 +3,11 @@ import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import First from '@/public/images/Hero/GaleriaHero.webp'
-import Second from '@/public/images/Hero/GaleriaHero.webp'
-import Third from '@/public/images/Hero/GaleriaHero.webp'
+import First from "@/public/images/1689236838-image.webp";
+import Second from "@/public/images/1689236838-image.webp";
+import Third from "@/public/images/1689236838-image.webp";
+import CustomSection from "../CustomSection";
+import SectionParagraph from "../SectionParagraph";
 
 type CardItemProps = {
   icon: StaticImageData;
@@ -52,13 +54,10 @@ const items: CardItemProps[] = [
 
 export default function FeatureSection() {
   return (
-    <div className="flex max-w-6xl flex-col items-center justify-center gap-4">
+    <CustomSection>
       <div className="space-y-4">
         <SectionTitle title="Tu inversión inmobiliaria más segura y rentable  " />
-        <p>
-          Nos encargamos de todo para que tu solo te ocupes de cobrar el
-          alquiler.
-        </p>
+        <SectionParagraph text="Rentabiliza tus ahorros y construye un patrimonio para el futuro invirtiendo en vivienda de alquiler de forma fácil y segura." />
       </div>
       <div className="grid grid-cols-1 items-center justify-center gap-4 lg:grid-cols-3">
         {items.map((item, index) => (
@@ -66,8 +65,8 @@ export default function FeatureSection() {
         ))}
       </div>
       <Button variant={"default"} size={"lg"}>
-        Inversión llave en mano 
+        Inversión llave en mano
       </Button>
-    </div>
+    </CustomSection>
   );
 }

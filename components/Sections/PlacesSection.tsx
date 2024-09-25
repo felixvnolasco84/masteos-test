@@ -70,12 +70,18 @@ const items: Place[] = [
   },
 ];
 
-export default function PlacesSection() {
+export default function PlacesSection({
+  sectionTitle,
+  sectionDescription,
+}: {
+  sectionTitle: string;
+  sectionDescription?: string;
+}) {
   return (
     <CustomSection>
       <div className="space-y-4">
-        <SectionTitle title="Expertos locales" />
-        <SectionParagraph text="Masteos está presente en más de 10 ciudades y municipios de España, y en toda Francia. ¡Seguro que con nosotros encuentras una oportunidad única!" />
+        <SectionTitle title={sectionTitle} />
+        {sectionDescription && <SectionParagraph text={sectionDescription} />}
       </div>
       <div className="grid w-full justify-center gap-4 lg:grid-cols-3">
         {items.map((item, index) => (

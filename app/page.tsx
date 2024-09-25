@@ -31,7 +31,10 @@ export default function Home() {
       <AchievementsSection />
       <FeatureSection />
       <ProjectsSection />
-      <PlacesSection />
+      <PlacesSection
+        sectionTitle="Expertos locales"
+        sectionDescription="Masteos está presente en más de 10 ciudades y municipios de España, y en toda Francia. ¡Seguro que con nosotros encuentras una oportunidad única!"
+      />
       <ReviewsSection />
       <BlogSection />
       <AboutUsSection />

@@ -20,13 +20,16 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center space-x-8">
-            <Link className="hidden lg:block" href={"/"}>
+            <Link
+              className="hidden lg:block"
+              href={"/inversion-vivienda-alquiler"}
+            >
               Nuestros sevivicios
             </Link>
-            <Link className="hidden lg:block" href={"/"}>
+            <Link className="hidden lg:block" href={"/realizaciones"}>
               Nuestros proyectos
             </Link>
-            <Link className="hidden lg:block" href={"/"}>
+            <Link className="hidden lg:block" href={"/donde-invertir"}>
               ¿Donde Invertir?
             </Link>
             <Link className="hidden lg:block" href={"/"}>

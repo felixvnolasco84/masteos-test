@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
-import First from "@/public/images/hero.webp";
-import Second from "@/public/images/hero.webp";
-import Third from "@/public/images/hero.webp";
+import First from "@/public/images/piso-valencia-carloslaura-2.webp";
+import Second from "@/public/images/piso-valencia-carloslaura-2.webp";
+import Third from "@/public/images/piso-valencia-carloslaura-2.webp";
 import SectionTitle from "../SectionTitle";
 import CardTitle from "../CardTitle";
 import { Card, CardContent, CardHeader } from "../ui/card";
@@ -28,7 +28,7 @@ function CardItem({
   return (
     <Card className="group flex flex-col overflow-hidden">
       <div className="transition group-hover:scale-105">
-        <Image src={image} alt={title} />
+        <Image className="rounded-3xl shadow-sm" src={image} alt={title} />
       </div>
       <CardHeader>
         <div className="flex items-center space-x-2 text-gray-400">

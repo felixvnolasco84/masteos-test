@@ -17,7 +17,7 @@ const config = {
       center: true,
       padding: "1rem",
       screens: {
-        "2xl": "1240px",
+        "2xl": "1200px",
       },
     },
     extend: {
@@ -28,7 +28,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#323234",
+          DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
